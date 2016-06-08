@@ -1,0 +1,9 @@
+$fa-font-path: "~font-awesome/fonts/" !default;
+@import "~font-awesome/scss/font-awesome.scss";
+@import './vendor/bootstrap';
+
+.listing {
+  img {
+    width: 100%;
+  }
+}

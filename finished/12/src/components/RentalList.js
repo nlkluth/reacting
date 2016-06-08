@@ -25,7 +25,7 @@ class RentalList extends React.Component {
     return this.props.list.get('results').map((item) => {
       return (
         <div key={item.get('id')} className="col-sm-3 listing">
-          <Link to={`/details/${item.id}`}>
+          <Link to={`/details/${item.get('id')}`}>
             {item.get('name')}
           </Link>
           <img src={item.get('picture_url')} alt="location" />

@@ -1,0 +1,37 @@
+$fa-font-path: '~font-awesome/fonts/' !default;
+@import '~font-awesome/scss/font-awesome';
+@import './vendor/bootstrap';
+
+.listing {
+  img {
+    width: 100%;
+    max-height: 195px;
+  }
+
+  .fa-heart,
+  .fa-heart-o {
+    color: #FF5A5F;
+    font-size: 50px;
+    position: absolute;
+    right: 30px;
+    top: 5px;
+  }
+
+  .detail-link {
+    color: #FF5A5F;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

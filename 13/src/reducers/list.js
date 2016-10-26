@@ -1,4 +1,5 @@
 import Immutable from 'immutable';
+import uuid from 'node-uuid';
 
 const defaultState = Immutable.fromJS({
   loading: false,
@@ -18,7 +19,8 @@ const list = (state = defaultState, action) => {
     case 'LIST_FETCH_SUCCESS':
       return state;
     case 'ADD_LISTING':
-      return state.set('results', state.get('results').push(Immutable.fromJS(action.payload)));
+      const newListing = Object.assign({}, action.payload, { id: uuid.v4() });
+      return state.set('results', state.get('results').push(Immutable.fromJS(newListing)));
     default:
       return state;
   }

@@ -1,9 +1,9 @@
 import React from 'react';
-import Favorite from './Favorite';
-import userActions from '../actions/user';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import Favorite from './Favorite';
+import userActions from '../actions/user';
 
 const mapStateToProps = (state) => ({
   list: state.list,
@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => ({
 class RentalList extends React.Component {
   static propTypes = {
     list: React.PropTypes.object,
+    user: React.PropTypes.object,
     userActions: React.PropTypes.object
   };
 
@@ -27,7 +28,7 @@ class RentalList extends React.Component {
           <Link to={`/details/${item.id}`}>
             {item.name}
           </Link>
-          <img src={item.picture_url} />
+          <img src={item.picture_url} alt="location" />
           <Favorite
             listing={item}
             user={this.props.user}

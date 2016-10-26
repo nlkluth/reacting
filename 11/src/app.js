@@ -17,16 +17,12 @@ const routes = (
   </Route>
 );
 
-class Root extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router history={browserHistory}>
-          {routes}
-        </Router>
-      </Provider>
-    );
-  }
-}
+const Root = () => (
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      {routes}
+    </Router>
+  </Provider>
+);
 
 ReactDOM.render(<Root />, document.getElementById('root'));

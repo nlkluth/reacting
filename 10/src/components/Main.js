@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 
-class Main extends React.Component {
-  render() {
-    return (
-      <div>
-        <Link to="/details">Details</Link>
-        <Link to="/">Home</Link>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const Main = ({ children }) => (
+  <div>
+    <Link to="/details">Details</Link>
+    <Link to="/">Home</Link>
+    {children}
+  </div>
+);
+
+Main.propTypes = {
+  children: React.PropTypes.element
+};
 
 export default Main;

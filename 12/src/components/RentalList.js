@@ -1,9 +1,9 @@
 import React from 'react';
-import Favorite from './Favorite';
-import userActions from '../actions/user';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import Favorite from './Favorite';
+import userActions from '../actions/user';
 
 const mapStateToProps = (state) => ({
   list: state.list,

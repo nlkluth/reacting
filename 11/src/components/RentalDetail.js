@@ -21,7 +21,7 @@ class RentalDetail extends React.Component {
     return (
       <div>
         Detail: {detail.name}
-        <img src={detail.picture_url} />
+        <img src={detail.picture_url} alt="location" />
       </div>
     );
   }

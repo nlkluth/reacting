@@ -1,9 +1,9 @@
 import React from 'react';
-import RentalListView from './RentalListView';
-import userActions from '../actions/user';
-import listActions from '../actions/list';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import RentalListView from './RentalListView';
+import userAction from '../actions/user';
+import listAction from '../actions/list';
 
 const mapStateToProps = (state) => ({
   list: state.list,
@@ -11,28 +11,24 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  userActions: bindActionCreators(userActions, dispatch),
-  listActions: bindActionCreators(listActions, dispatch)
+  userActions: bindActionCreators(userAction, dispatch),
+  listActions: bindActionCreators(listAction, dispatch)
 });
 
-class RentalListContainer extends React.Component {
-  static propTypes = {
-    list: React.PropTypes.object,
-    userActions: React.PropTypes.object,
-    user: React.PropTypes.object,
-    listActions: React.PropTypes.object
-  };
+const RentalListContainer = ({ list, userActions, user, listActions }) => (
+  <RentalListView
+    list={list}
+    userActions={userActions}
+    user={user}
+    listActions={listActions}
+  />
+);
 
-  render() {
-    return (
-      <RentalListView
-        list={this.props.list}
-        userActions={this.props.userActions}
-        user={this.props.user}
-        listActions={this.props.listActions}
-      />
-    );
-  }
-}
+RentalListContainer.propTypes = {
+  list: React.PropTypes.object,
+  userActions: React.PropTypes.object,
+  user: React.PropTypes.object,
+  listActions: React.PropTypes.object
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RentalListContainer);

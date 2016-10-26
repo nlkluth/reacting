@@ -23,12 +23,12 @@ class Favorite extends React.Component {
 
     if (favorite) {
       return (
-        <i className="fa fa-heart"></i>
+        <i className="fa fa-heart" />
       );
     }
 
     return (
-      <i className="fa fa-heart-o" onClick={this.handleClick}></i>
+      <i className="fa fa-heart-o" onClick={this.handleClick} />
     );
   }
 }

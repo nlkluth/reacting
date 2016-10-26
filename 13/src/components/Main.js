@@ -1,19 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-class Main extends React.Component {
-  static propTypes = {
-    children: React.PropTypes.any
-  };
+const Main = ({ children }) => (
+  <div className="container-fluid">
+    <Link to="/">Home</Link>
+    {children}
+  </div>
+);
 
-  render() {
-    return (
-      <div className="container-fluid">
-        <Link to="/">Home</Link>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+Main.propTypes = {
+  children: React.PropTypes.element
+};
 
 export default Main;

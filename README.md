@@ -8,3 +8,4 @@ incrementally adding in libraries
 - https://facebook.github.io/react/docs/reconciliation.html
 - https://github.com/reactjs/react-basic
 - https://facebook.github.io/react/contributing/design-principles.html
+- https://www.youtube.com/watch?v=kp-NOggyz54
